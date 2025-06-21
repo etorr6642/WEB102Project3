@@ -107,6 +107,8 @@ const App = () => {
   // State variables
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
+
+  // shuffle state variable and useEffect to set the initial shuffled questions
   const [shuffledQuestions, setShuffledQuestions] = useState([]);
 
   useEffect(() => {
@@ -116,8 +118,6 @@ const App = () => {
   , []);
 
 
-  
-  
 
 //function to flip the card and show the answer
   const flipCard = () => {
@@ -135,29 +135,58 @@ const App = () => {
         {/* Description */}
         <p>How well do you know your Pokémon? Test your knowledge of the original 151 Pokémon here!</p>
         {/* Number of cards in the deck */}
-        <p>Number of cards: {questions.length+1} </p>
+        <p>Number of cards: {questions.length} </p>
       </div>
 
-      {shuffledQuestions[currentQuestion] && (
-
-        // {/* create a card that looks like it is flipping when clicked */}
-        <div className ='card-flip-container' onClick={() => flipCard()}>
-          {/* inner card that determins if it is flipped or not */}
-          <div className={`card-inner ${showAnswer ? 'flipped' : ''}`}>
-            {/* front card information- question */}
-            <div className="front card">
-              <h3>{shuffledQuestions[currentQuestion].question}</h3>
+      
+       {/* create a card that looks like it is flipping when clicked */}
+      <div className ='card-flip-container' >
+        
+        {/* inner card that determins if it is flipped or not */}
+        <div className={`card-inner ${showAnswer ? 'flipped' : ''}`}>
+          {/* front card information- question */}
+          <div className="front card">
+            {/* display card number */}
+            <div className='card-number'>
+              <h3>Card {currentQuestion+1 } of {questions.length}</h3>
             </div>
-            {/* Back card information - answer */}
-            <div className="back card">
-              <div className="answer">
-                <h3>{shuffledQuestions[currentQuestion].answer}</h3>
-                <img src={shuffledQuestions[currentQuestion].image} alt={shuffledQuestions[currentQuestion].answer} />
-              </div>
+            <div className='card-question'>
+              <h2>{questions[currentQuestion].question}</h2>
+            </div>
+          </div>
+          {/* Back card information - answer */}
+          <div className="back card">
+            <div className="answer">
+              <h3>{questions[currentQuestion].answer}</h3>
+              <img src={questions[currentQuestion].image} alt={questions[currentQuestion].answer} />
             </div>
           </div>
         </div>
-      )}
+      </div>
+      
+      {/* allow user to enter an answer and submit with a button */}
+      <div className='answerInput'>
+        <input type="text" placeholder="Type your answer here..." />
+        <button onClick={() => {
+          //check if the input matches part of the answer
+          if (document.querySelector('input').value.trim() === '') {
+            alert("Please enter an answer before submitting.");
+            return;
+          }
+          const userAnswer = document.querySelector('input').value.trim().toLowerCase();
+          const correctAnswer = questions[currentQuestion].answer.trim().toLowerCase();
+          if (userAnswer === correctAnswer) {
+            alert("Correct!");
+          } else {
+            alert(`Incorrect! The correct answer is: ${questions[currentQuestion].answer}`);
+          }
+          // clear the input field
+          document.querySelector('input').value = '';
+          // flip the card to show the answer
+          setShowAnswer(true);
+          
+        }}>Submit Answer</button>
+      </div>
 
       {/* buttons to go to next question or previous question */}
       <div className='nextPrevious'>
@@ -166,7 +195,12 @@ const App = () => {
           setShowAnswer(false);
           // set a timeout to make it look like the card is flipping
           setTimeout(() => {
-            setCurrentQuestion((currentQuestion - 1 + questions.length) % questions.length);
+            if(currentQuestion-1>=0){
+            setCurrentQuestion((currentQuestion - 1 ));
+          }else{
+            //disable the button if there are no previous questions
+            alert("No previous questions");
+          }
           },200)
           
         }}>
@@ -177,14 +211,17 @@ const App = () => {
           setShowAnswer(false);
           // set a timeout to make it look like the card is flipping
           setTimeout(() => {
-            if(currentQuestion+1<shuffledQuestions.length){
+            if(currentQuestion+1<questions.length){
               setCurrentQuestion(currentQuestion + 1);
+            }else{
+              //disable the button if there are no previous questions
+              alert("No more questions");
             }
-            else{
-              const reshuffle = [...questions].sort(() => Math.random() - 0.5);
-              setShuffledQuestions(reshuffle);
-              setCurrentQuestion(0);  
-            }
+            // else{
+            //   const reshuffle = [...questions].sort(() => Math.random() - 0.5);
+            //   setShuffledQuestions(reshuffle);
+            //   setCurrentQuestion(0);  
+            // }
           }, 200)
           
         }}>

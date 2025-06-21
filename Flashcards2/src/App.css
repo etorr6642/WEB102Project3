@@ -118,3 +118,11 @@ img{
   height: 100px;
   margin-bottom: 20px;
 }
+
+.front{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
