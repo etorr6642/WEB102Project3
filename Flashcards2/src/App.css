@@ -1,0 +1,120 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+
+  
+}
+/* App css */
+.App{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+/* body css */
+body {
+  background-image: url('/pokemon.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+
+/* header css */
+.header{
+  background-color: white;
+  color: black;
+  padding: 10px 100px;
+  border-radius: 100px;
+  border-color: black;
+  border-style: solid;
+  margin-bottom: 50px;
+}
+
+/* css for next and previous button */
+.nextPrevious{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* css for next button */
+.next {
+  margin: 0 20px;
+  color: black;
+  background-color: white;
+  border-radius: 100px;
+  border-color: black;
+}
+
+/* css for previout button */
+.prev {
+  margin: 0 20px;
+  color: black;
+  background-color: white;
+  border-radius: 100px;
+  border-color: black;
+}
+
+/* format card so it looks like it is flipping when clicked */
+.card-flip-container {
+  perspective: 1000px;
+  width: 600px;
+  height: 300px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.card-inner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;  
+
+}
+.card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+
+.card{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  padding: 1rem;
+  box-sizing: border-box;
+  border: 5px solid black;
+  background-color: white;
+  color: black;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  
+
+}
+.back{
+  transform: rotateY(180deg);
+}
+/* css for answer and image */
+.answer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  
+}
+
+img{
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
