@@ -13,9 +13,9 @@ const questions = [
     image: "/charmeleon.jpg"
   },
   {
-    question: "Which three Pokémon can evolve from Eevee in Gen 1?",
-    answer: "Vaporeon, Jolteon, Flareon",
-    image: "three.jpg"
+    question: "Which water Pokémon can evolve from Eevee in Gen 1?",
+    answer: "Vaporeon",
+    image: "/vaporeon.jpg"
   },
   {
     question: "What type is Pikachu?",
@@ -33,9 +33,9 @@ const questions = [
     image: "/cubone.png"
   },
   {
-    question: "What are the three final evolutions of the Kanto starter Pokémon?",
-    answer: "Venusaur, Charizard, Blastoise",
-    image: "/vcb.jpg"
+    question: "What is the final evolution of Charmander?",
+    answer: "Charizard",
+    image: "/charizard.png"
   },
   {
     question: "Which Pokémon is number 151 in the Pokédex?",
@@ -48,9 +48,9 @@ const questions = [
     image: "/magikarp.jpg"
   },
   {
-    question: "Which two Pokémon are fossil Pokémon in Gen 1?",
-    answer: "Omanyte and Kabuto",
-    image: "/ok.png"
+    question: "Which fossil Pokémon evolves into Omastar?",
+    answer: "Omanyte",
+    image: "/omanyte.jpg"
   },
   {
     question: "Which Psychic-type Pokémon is known for its spoons?",
@@ -58,12 +58,12 @@ const questions = [
     image: "/alakazam.jpg"
   },
   {
-    question: "What is the only Ghost-type evolutionary line in Gen 1?",
-    answer: "Gastly → Haunter → Gengar",
-    image: "/ghg.jpg"
+    question: "Which Pokémon is known for helping at the Pokémon Center?",
+    answer: "Chansey",
+    image: "/chansey.png"
   },
   {
-    question: "Which Pokémon is known for saying its own name and is a balloon?",
+    question: "Which Pokémon is known for putting people to sleep with a song?",
     answer: "Jigglypuff",
     image: "/jigglypuff.jpg"
   },
@@ -73,14 +73,14 @@ const questions = [
     image: "/pika.jpg"
   },
   {
-    question: "Which Pokémon do Team Rocket often use in the anime?",
-    answer: "Ekans and Koffing",
-    image: "/ke.jpg"
+    question: "Which Pokémon does Team Rocket's Jessie often use in the anime?",
+    answer: "Ekans",
+    image: "/ekans.jpg"
   },
   {
-    question: "Which two Pokémon can only evolve via trading in Gen 1?",
-    answer: "Machoke Kadabra Haunter Graveler",
-    image: "/four.jpg"
+    question: "Which Pokémon is known to sleep a lot?",
+    answer: "Snorlax",
+    image: "/snorlax.jpg"
   },
   {
     question: "Which Pokémon is known as the 'Evolution Pokémon'?",
@@ -96,7 +96,13 @@ const questions = [
     question: "Which Dragon-type Pokémon is the final evolution of Dratini?",
     answer: "Dragonite",
     image: "/dragonite.jpg"
-  }
+  },
+  {
+    question: "Which Pokémon is known for its powerful psychic abilities?",
+    answer: "Mewtwo",
+    image: "/mewtwo.png"
+  },
+
 ];
 
 function shuffleArray(array) {
