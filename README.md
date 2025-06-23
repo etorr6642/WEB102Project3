@@ -2,7 +2,7 @@
 
 Submitted by: **Edward Torres**
 
-This web app: **insert description**
+This web app: **This web app tests the user's knowledge on Pokemon in the Kanto Region**
 
 Time spent: **4** hours spent in total
 
@@ -45,14 +45,11 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+Video Walkthrough: https://i.imgur.com/DxXP7yn.gif
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+GIF created with ScreenToGif  
+
 
 ## Notes
 
